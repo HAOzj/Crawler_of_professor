@@ -12,6 +12,13 @@ es = Elasticsearch()
 
 
 def save_es(index, doc_type, profiles):
+    """profiles存入本地es
+
+    Args:
+        index(str) :- es索引
+        doc_type(str) :- es文章类型
+        profiles(iterables) :- 存入es的json列表,格式为[dict]
+    """
     for id, profile in enumerate(profiles):
         es.index(index=index,
                  doc_type=doc_type,
