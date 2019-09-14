@@ -1,5 +1,5 @@
 """
-@data: Sep 14th, 2019
+@date: Sep 14th, 2019
 
 @author: woshihaozhaojun@sina.com
 """
@@ -62,17 +62,23 @@ def get_detail_of_prof(url, classes, classes_li, classes_next):
 
 
 def main():
-    urls = get_url_list(url=conf_loader.url,
-                 prefix=conf_loader.prefix,
-                 href_pattern=conf_loader.href_pattern)
+    urls = get_url_list(
+        url=conf_loader.url,
+        prefix=conf_loader.prefix,
+        href_pattern=conf_loader.href_pattern
+    )
+
     profs = []
     for url in urls:
-        prof = get_detail_of_prof(url=url,
-                           classes=conf_loader.classes,
-                           classes_li=conf_loader.classes_li,
-                           classes_next=conf_loader.classes_next)
+        prof = get_detail_of_prof(
+            url=url,
+            classes=conf_loader.classes,
+            classes_li=conf_loader.classes_li,
+            classes_next=conf_loader.classes_next
+        )
         profs.append(prof)
-        print(prof)
+    return profs
+
 
 if __name__ == "__main__":
     main()
